@@ -1,6 +1,6 @@
 from doctr.io import DocumentFile
 from doctr.models import ocr_predictor
-from s3 import download
+from aws.s3 import download
 import os
 
 
