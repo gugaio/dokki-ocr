@@ -1,8 +1,13 @@
 import unittest
+import sys
+sys.path
+sys.path.append('../ocr')
 from parser import Parser
 import json
 
-TEST_FILE_SAMPLE = 'test/ocr_sample.json'
+
+
+TEST_FILE_SAMPLE = 'data/ocr_sample.json'
 
 class ParserTest(unittest.TestCase):
 
