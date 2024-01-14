@@ -9,11 +9,12 @@ RUN apt-get update \
 RUN pip install Flask
 RUN pip install flask-requests
 RUN pip install flask-cors
+RUN pip install boto3
+RUN pip install python-dotenv
+
+COPY . .
 
 RUN mkdir temp
-
-COPY ./ocr.py .
-COPY ./server.py .
 
 EXPOSE 5000
 

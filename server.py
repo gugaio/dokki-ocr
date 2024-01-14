@@ -13,14 +13,12 @@ CORS(app)
 
 @app.route('/singlepage', methods=['POST'])
 def singlepage():  
-    doc = []  
     file = request.files['image']    
     binary_data = file.read()
     image_bytes_io = BytesIO(binary_data)
-    image = Image.open(image_bytes_io)    
-    img_array = np.array(image)    
-    doc.append(img_array)
-    data = ocr_image(doc)
+    image = Image.open(image_bytes_io).convert('RGB')
+    img_array = np.array(image)  
+    data = ocr_image([img_array])
 
     wordParser = Parser()
     page = wordParser.all_words_single_page(data)
